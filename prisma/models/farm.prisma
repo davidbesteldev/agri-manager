@@ -1,0 +1,20 @@
+model Farm {
+  id    String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name  String @db.VarChar(255)
+  city  String @db.VarChar(255)
+  state String @db.Char(2)
+
+  totalArea      Float @map("total_area")
+  arableArea     Float @map("arable_area")
+  vegetationArea Float @map("vegetation_area")
+
+  producerId String   @map("producer_id") @db.Uuid
+  producer   Producer @relation(fields: [producerId], references: [id], onDelete: Cascade)
+
+  harvests FarmCrop[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("farms")
+}

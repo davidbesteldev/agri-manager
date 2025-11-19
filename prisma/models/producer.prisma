@@ -1,0 +1,18 @@
+model Producer {
+  id           String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name         String       @db.VarChar(255)
+  document     String       @unique @db.VarChar(14)
+  documentType DocumentType @map("document_type")
+
+  farms Farm[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("producers")
+}
+
+enum DocumentType {
+  CPF
+  CNPJ
+}

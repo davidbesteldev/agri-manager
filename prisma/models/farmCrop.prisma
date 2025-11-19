@@ -1,0 +1,15 @@
+model FarmCrop {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+
+  farmId String @map("farm_id") @db.Uuid
+  farm   Farm   @relation(fields: [farmId], references: [id], onDelete: Cascade)
+
+  cropId String @map("crop_id") @db.Uuid
+  crop   Crop   @relation(fields: [cropId], references: [id])
+
+  harvestId String  @map("harvest_id") @db.Uuid
+  harvest   Harvest @relation(fields: [harvestId], references: [id])
+
+  @@unique([farmId, cropId, harvestId])
+  @@map("farm_crops")
+}
