@@ -5,12 +5,16 @@ export const originalEnv = z.object({
     .enum(['local', 'test', 'development', 'staging', 'production'])
     .default('test'),
   PORT: z.coerce.number().optional().default(3000),
+  DATABASE_URL: z.string(),
 })
 
 export const envConfig = originalEnv.transform((env) => ({
   app: {
     nodeEnv: env.NODE_ENV,
     port: env.PORT,
+  },
+  db: {
+    url: env.DATABASE_URL,
   },
 }))
 
