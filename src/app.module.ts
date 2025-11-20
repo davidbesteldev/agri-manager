@@ -6,6 +6,7 @@ import { DatabaseModule } from '@app/core/database/database.module'
 import { CropModule } from '@app/modules/crops/crop.module'
 import { FarmModule } from '@app/modules/farms/farm.module'
 import { HarvestModule } from '@app/modules/harvests/harvest.module'
+import { PlantingModule } from '@app/modules/plantings/planting.module'
 import { ProducerModule } from '@app/modules/producers/producer.module'
 
 @Module({
@@ -16,6 +17,7 @@ import { ProducerModule } from '@app/modules/producers/producer.module'
     FarmModule,
     CropModule,
     HarvestModule,
+    PlantingModule,
   ],
   controllers: [],
   providers: [],
