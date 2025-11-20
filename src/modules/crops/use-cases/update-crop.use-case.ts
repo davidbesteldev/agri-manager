@@ -19,7 +19,7 @@ export class UpdateCropUseCase {
     if (!crop) throw new NotFoundException('Crop not found.')
 
     const cropNameAlreadyExist = await this.cropRepo.model.findFirst({
-      where: { name: { contains: removeAccents(dto.name), mode: 'insensitive' } },
+      where: { name: { equals: removeAccents(dto.name), mode: 'insensitive' } },
     })
     if (cropNameAlreadyExist) {
       throw new UnprocessableEntityException('Crop name already exist.')

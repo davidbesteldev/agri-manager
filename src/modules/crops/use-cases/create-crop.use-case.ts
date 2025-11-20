@@ -12,7 +12,7 @@ export class CreateCropUseCase {
 
   async execute(dto: CreateCropDto): Promise<CropEntity> {
     const crop = await this.cropRepo.model.findFirst({
-      where: { name: { contains: removeAccents(dto.name), mode: 'insensitive' } },
+      where: { name: { equals: removeAccents(dto.name), mode: 'insensitive' } },
     })
     if (crop) throw new UnprocessableEntityException('Crop name already exist.')
 
