@@ -5,10 +5,18 @@ import { DatabaseModule } from '@app/core/database/database.module'
 
 import { CropModule } from '@app/modules/crops/crop.module'
 import { FarmModule } from '@app/modules/farms/farm.module'
+import { HarvestModule } from '@app/modules/harvests/harvest.module'
 import { ProducerModule } from '@app/modules/producers/producer.module'
 
 @Module({
-  imports: [EnvModule, DatabaseModule, ProducerModule, FarmModule, CropModule],
+  imports: [
+    EnvModule,
+    DatabaseModule,
+    ProducerModule,
+    FarmModule,
+    CropModule,
+    HarvestModule,
+  ],
   controllers: [],
   providers: [],
 })
