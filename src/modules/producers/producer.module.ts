@@ -8,12 +8,10 @@ import { ProducerRepository } from '@app/modules/producers/repositories/producer
 
 import * as useCases from './use-cases'
 
-const repositories = [ProducerRepository]
-
 @Module({
   imports: [DatabaseModule],
   controllers: [ProducerController],
-  providers: [...repositories, ...Object.values(useCases), ProducerService],
-  exports: [...repositories],
+  providers: [ProducerRepository, ...Object.values(useCases), ProducerService],
+  exports: [ProducerRepository],
 })
 export class ProducerModule {}

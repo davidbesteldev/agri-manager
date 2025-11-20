@@ -31,7 +31,7 @@ export class ProducerController {
 
   @Get()
   @ApiOperation({ summary: 'Buscar produtores' })
-  getMatches(@Query() query: ListProducersQueryDto) {
+  list(@Query() query: ListProducersQueryDto) {
     return this.producerService.list(query)
   }
 
