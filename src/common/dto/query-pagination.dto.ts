@@ -1,9 +1,10 @@
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
+import { IsEnum, IsNumberString, IsOptional } from 'class-validator'
+
 import {
   DEFAULT_PAGE_NUMBER,
   DEFAULT_PAGE_SIZE,
 } from '@app/common/database/utils/pagination.utils'
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
-import { IsEnum, IsNumberString, IsOptional } from 'class-validator'
 
 export enum QueryPaginationOrderEnum {
   DESC = 'desc',
