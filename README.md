@@ -34,7 +34,7 @@ docker-compose logs -f agri_manager_api
 ### 🖥️ Opção 2 - local
 
 ```bash
-# Subir o banco de dados (não esqueça de mudar o host do banco na env para localhost, conforme instruido no .env.example)
+# Subir o banco de dados
 docker-compose up agri_manager_db -d
 
 # Instale as dependências

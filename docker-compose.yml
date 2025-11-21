@@ -10,6 +10,8 @@ services:
       - agri_manager_db
     env_file:
       - .env
+    environment:
+      - DATABASE_URL=postgresql://docker:docker@agri_manager_db:5432/agri_manager # sobrescreve a .env para o host certo do docker
 
   agri_manager_db:
     image: postgres:15-alpine
