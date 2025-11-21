@@ -1,4 +1,4 @@
-import { omit } from './omit.util'
+import { omit } from '../omit.util'
 
 describe('omit', () => {
   it('should remove the specified keys', () => {

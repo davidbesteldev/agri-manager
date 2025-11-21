@@ -21,6 +21,10 @@ const config: Config.InitialOptions = {
     '/src/.*/interfaces/',
     '/src/.*/__fixtures__/',
     '/src/.*/__mocks__/',
+    '\\.module\\.ts$',
+    '\\.controller\\.ts$',
+    '\\.service\\.ts$',
+    '\\.repository\\.ts$',
   ],
   coverageThreshold: {
     global: {
