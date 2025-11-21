@@ -1,0 +1,27 @@
+services:
+  agri_manager_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - agri_manager_db
+    env_file:
+      - .env
+
+  agri_manager_db:
+    image: postgres:15-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: agri_manager
+    volumes:
+      - agrimanager_postgres:/var/lib/postgresql/data
+
+volumes:
+  agrimanager_postgres:

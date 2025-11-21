@@ -10,7 +10,8 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/src/main",
+    "start:migrate:prod": "npx prisma migrate deploy && npm run start:prod",
     "format": "prettier . --write && prisma format",
     "lint": "eslint \"{src,apps,test}/**/*.ts\" --fix",
     "test": "jest",
@@ -19,7 +20,6 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "prisma:generate": "npx prisma generate",
     "prisma:migrate:dev": "npx prisma migrate dev",
-    "prisma:migrate:prod": "npx prisma migrate deploy",
     "prisma:seed": "npx prisma db seed",
     "prisma:format": "npx prisma format",
     "prisma:studio": "npx prisma studio"

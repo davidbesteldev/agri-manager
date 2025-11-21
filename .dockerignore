@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+yarn-error.log
+
+*.test.ts
+*.spec.ts
+__tests__/
+
+dist/
+
