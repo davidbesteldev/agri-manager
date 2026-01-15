@@ -1,3 +1,5 @@
+> ⚠️ **Nota:** Este projeto foi desenvolvido exclusivamente para fins de avaliação técnica em um processo seletivo.
+
 # 🚜 Agri Manager
 
 API para gerenciar produtores rurais.
